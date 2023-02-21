@@ -1,0 +1,12 @@
+[Unit]
+Description=MITM PROXY
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/root/query/env/bin/python3 /root/query/manage.py runscript icq
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
